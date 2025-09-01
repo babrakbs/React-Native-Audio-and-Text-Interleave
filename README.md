@@ -1,3 +1,8 @@
+
+# Project Title
+
+A brief description of what this project does and who it's for
+
 # 🎧 React Native Audio & Transcript Interleave
 
 A cross-platform **React Native Audio Player** that synchronizes spoken audio with transcript metadata.  
@@ -23,44 +28,55 @@ This project was developed as part of an assessment task.
 
 ## 📂 Project Structure
 
+```text
 project-root/
-│── assets/ # Audio and transcript sample files
-│── src/
-│ ├── components/ # UI components (buttons, transcript, progress bar, etc.)
-│ ├── services/ # Custom hooks (audio + transcript syncing)
-│ ├── services/ # Custom hooks (audio + transcript syncing)
-│ ├── screens/ # App screens
-│ ├── utils/ # Helper functions
-│── App.js # Entry point
-│── package.json
-│── README.md
-│── index.js
+├── assets/               # Audio and transcript sample files
+├── src/
+│   ├── components/       # UI components (buttons, transcript, progress bar, etc.)
+│   ├── services/         # Custom hooks (audio + transcript syncing)
+│   ├── screens/          # App screens
+│   ├── utils/            # Helper functions
+├── App.js                # Entry point
+├── package.json
+├── README.md
+└── index.js
 
----
-
-
----
+```
 
 ## 🛠️ Installation & Setup
 
+\`\`\`bash
+# install dependencies
 yarn install
 # or
 npm install
+\`\`\`
 
-## Run the app
-iOS
+### Run the app
+
+**iOS**
+\`\`\`bash
 cd ios && pod install && cd ..
 yarn ios
+\`\`\`
 
-Android:
+**Android**
+\`\`\`bash
 yarn android
+\`\`\`
 
-Web
+**Web**
+\`\`\`bash
 yarn start
+\`\`\`
 
-📑 Metadata Input Format
+---
+
+## 📑 Metadata Input Format
+
 The transcript metadata is provided as a JSON file in the following format:
 
+\`\`\`json
 {
   "pause": 250,
   "speakers": [
@@ -79,35 +95,30 @@ The transcript metadata is provided as a JSON file in the following format:
     }
   ]
 }
-pause → duration (ms) of silence inserted after each phrase
+\`\`\`
 
-time → duration (ms) of the phrase in the audio
+- `pause` → duration (ms) of silence inserted after each phrase  
+- `time` → duration (ms) of the phrase in the audio  
 
-🧪 Testing
+---
 
-The app includes unit tests for utility functions and integration tests for audio + transcript syncing.
-yarn test
+## 📦 Sample Files
 
+- ✅ Sample transcript JSON (`example_audio.json`)  
+- ✅ Sample MP3 audio file (`example_audio.mp3`)  
+- ✅ Wireframe sketches  
 
-To run tests:
-📦 Sample Files
+---
 
-✅ Sample transcript JSON (example_audio.json)
+## 📖 Development Guidelines
 
-✅ Sample MP3 audio file (example_audio.mp3)
+- Code follows React Native best practices and functional component patterns.  
+- UI follows standard design principle (atoms → molecules → organisms).  
+- Commit history is clean, with small, meaningful commits.  
+- Code is refactored, commented, and easy to extend.  
 
-✅ Wireframe sketches
+---
 
-📖 Development Guidelines
+## 👨‍💻 Author
 
-Code follows React Native best practices and functional component patterns.
-
-UI follows Atomic Design principle (atoms → molecules → organisms).
-
-Commit history is clean, with small, meaningful commits.
-
-Code is refactored, commented, and easy to extend.
-
-👨‍💻 Author
-
-Developed with ❤️ by Babrak Sohail# React-Native-Audio-and-Text-Interleave
+Developed with ❤️ + 🧠 by **Babrak Sohail**
