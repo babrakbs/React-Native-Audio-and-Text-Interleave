@@ -1,13 +1,15 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../Constants";
+import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      paddingHorizontal: 16,
+      paddingHorizontal: widthPercentageToDP(3),
     },
     chatContainer: {
-      paddingVertical: 16,
+      paddingVertical: heightPercentageToDP(2),
     },
   });
   
