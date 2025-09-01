@@ -1,97 +1,113 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🎧 React Native Audio & Transcript Interleave
 
-# Getting Started
+A cross-platform **React Native Audio Player** that synchronizes spoken audio with transcript metadata.  
+It highlights the currently spoken phrase while playing audio and provides playback controls (Play, Pause, Rewind, Forward, Repeat).  
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+This project was developed as part of an assessment task.
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🚀 Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- Play audio with synchronized transcript highlighting  
+- Playback controls:  
+  - ▶️ **Play** – play the audio from the current position  
+  - ⏸ **Pause** – pause playback  
+  - ⏪ **Rewind** – jump to the beginning of the current (or previous) phrase  
+  - ⏩ **Forward** – jump to the next phrase  
+  - 🔁 **Repeat** – replay the last phrase at **0.75x speed**  
+- Highlight the current phrase during playback and pause  
+- Cross-platform support: **Web, Android, iOS**
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
-```
+## 📂 Project Structure
 
-## Step 2: Build and run your app
+project-root/
+│── assets/ # Audio and transcript sample files
+│── src/
+│ ├── components/ # UI components (buttons, transcript, progress bar, etc.)
+│ ├── services/ # Custom hooks (audio + transcript syncing)
+│ ├── services/ # Custom hooks (audio + transcript syncing)
+│ ├── screens/ # App screens
+│ ├── utils/ # Helper functions
+│── App.js # Entry point
+│── package.json
+│── README.md
+│── index.js
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+---
 
-### Android
 
-```sh
-# Using npm
-npm run android
+---
 
-# OR using Yarn
-yarn android
-```
+## 🛠️ Installation & Setup
 
-### iOS
+yarn install
+# or
+npm install
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
+## Run the app
+iOS
+cd ios && pod install && cd ..
 yarn ios
-```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Android:
+yarn android
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Web
+yarn start
 
-## Step 3: Modify your app
+📑 Metadata Input Format
+The transcript metadata is provided as a JSON file in the following format:
 
-Now that you have successfully run the app, let's make changes!
+{
+  "pause": 250,
+  "speakers": [
+    {
+      "name": "John",
+      "phrases": [
+        { "words": "this is one phrase.", "time": 1474 },
+        { "words": "now the second phrase.", "time": 1667 }
+      ]
+    },
+    {
+      "name": "Alice",
+      "phrases": [
+        { "words": "another speaker phrase.", "time": 1214 }
+      ]
+    }
+  ]
+}
+pause → duration (ms) of silence inserted after each phrase
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+time → duration (ms) of the phrase in the audio
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+🧪 Testing
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+The app includes unit tests for utility functions and integration tests for audio + transcript syncing.
+yarn test
 
-## Congratulations! :tada:
 
-You've successfully run and modified your React Native App. :partying_face:
+To run tests:
+📦 Sample Files
 
-### Now what?
+✅ Sample transcript JSON (example_audio.json)
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+✅ Sample MP3 audio file (example_audio.mp3)
 
-# Troubleshooting
+✅ Wireframe sketches
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+📖 Development Guidelines
 
-# Learn More
+Code follows React Native best practices and functional component patterns.
 
-To learn more about React Native, take a look at the following resources:
+UI follows Atomic Design principle (atoms → molecules → organisms).
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Commit history is clean, with small, meaningful commits.
+
+Code is refactored, commented, and easy to extend.
+
+👨‍💻 Author
+
+Developed with ❤️ by Babrak Sohail# React-Native-Audio-and-Text-Interleave
